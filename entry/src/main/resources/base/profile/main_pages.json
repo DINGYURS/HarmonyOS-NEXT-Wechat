@@ -1,0 +1,16 @@
+{
+  "src": [
+    "pages/login/LoginPage",
+    "pages/register/RegisterPage",
+    "pages/Index",
+    "pages/search/SearchPage",
+    "pages/chat/ChatPage1",
+    "pages/chat/ChatPage2",
+    "pages/chat/ChatPage3",
+    "pages/chat/ChatPage4",
+    "pages/chat/ChatPage5",
+    "pages/chat/ChatPage6",
+    "pages/qrcode/MyQrCodePage",
+    "pages/HardwareIndexPage"
+  ]
+}
