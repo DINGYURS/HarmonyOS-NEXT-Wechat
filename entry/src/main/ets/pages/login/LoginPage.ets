@@ -27,8 +27,8 @@ export default struct LoginPage {
       Column({ space: 25}) {
         Row() {
           Text('国家/地区')
-            .width('30%')
-            .textAlign(TextAlign.End)
+            .width('25%')
+            .textAlign(TextAlign.Center)
           Text('中国大陆（+86）')
             .fontColor('#0cc161')
             .width('60%')
@@ -39,8 +39,8 @@ export default struct LoginPage {
 
         Row() {
           Text('手机号')
-            .width('30%')
-            .textAlign(TextAlign.End)
+            .width('25%')
+            .textAlign(TextAlign.Center)
           TextInput({
             placeholder: '请填写手机号'
           })
@@ -53,8 +53,8 @@ export default struct LoginPage {
 
         Row() {
           Text('密码')
-            .width('30%')
-            .textAlign(TextAlign.End)
+            .width('25%')
+            .textAlign(TextAlign.Center)
           TextInput({
             placeholder: '请输入密码'
           })
@@ -74,14 +74,14 @@ export default struct LoginPage {
       Button() {
         Text('登录')
           .fontColor('#f5fffb')
-          .fontSize(18)
+          .fontSize(20)
           .onClick(() => {
             router.pushUrl({
               url: 'pages/chat/ChatContentItemData'
             })
           })
       }
-      .width(130)
+      .width(180)
       .height(50)
       .borderRadius(10)
       .margin({ bottom: 20})
