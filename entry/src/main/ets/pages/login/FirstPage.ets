@@ -67,6 +67,5 @@ export default struct FirstPage {
        });
       }, 2000);
     })
-    .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP, SafeAreaEdge.BOTTOM])
   }
 }
