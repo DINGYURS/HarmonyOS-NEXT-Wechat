@@ -1,9 +1,9 @@
-import { router } from "@kit.ArkUI"
+import router from '@ohos.router';
 
 @Entry
 @Component
 export default struct LoginPage {
-  @State username: string = ''
+  @State telephone: string = ''
   @State password: string = ''
   @State isLoading: boolean = false
 
@@ -28,36 +28,33 @@ export default struct LoginPage {
       Column({ space: 25}) {
         Row() {
           Text('国家/地区')
-            .width('25%')
+            .width('30%')
             .textAlign(TextAlign.Center)
           Text('中国大陆（+86）')
             .fontColor('#0cc161')
             .width('60%')
-            .margin({ left: 10})
         }
-        .width('100%')
         .justifyContent(FlexAlign.Center)
 
         Row() {
           Text('手机号')
-            .width('25%')
+            .width('30%')
             .textAlign(TextAlign.Center)
           TextInput({
             placeholder: '请填写手机号'
           })
             .onChange((value: string) => {
-              this.username = value;
+              this.telephone = value;
             })
             .borderRadius(10)
             .width('60%')
             .margin({ left: 10})
         }
-        .width('100%')
         .justifyContent(FlexAlign.Center)
 
         Row() {
           Text('密码')
-            .width('25%')
+            .width('30%')
             .textAlign(TextAlign.Center)
           TextInput({
             placeholder: '请输入密码'
@@ -70,8 +67,8 @@ export default struct LoginPage {
             .margin({ left: 10})
         }
         .justifyContent(FlexAlign.Center)
-        .width('100%')
       }
+      .width('100%')
 
       Row() {
         if (this.isLoading) {
@@ -103,7 +100,7 @@ export default struct LoginPage {
       .enabled(!this.isLoading)
       .backgroundColor('#0cc160')
       .onClick(() => {
-        if (this.username === '' || this.password === '') {
+        if (this.telephone === '' || this.password === '') {
           AlertDialog.show({
             title: '登录失败',
             message: '用户名或密码不能为空！',
@@ -120,7 +117,7 @@ export default struct LoginPage {
         this.isLoading = true;
 
         setTimeout(() => {
-          if (this.username === '123456' && this.password === '123456') {
+          if (this.telephone === '123456' && this.password === '123456') {
             router.pushUrl({ url: 'pages/Index' });
           } else {
             AlertDialog.show({
