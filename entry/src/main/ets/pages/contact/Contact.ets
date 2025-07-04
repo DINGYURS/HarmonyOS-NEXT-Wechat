@@ -71,9 +71,9 @@ export default struct Contact {
 
       Column() {
         // 标题栏
-        //WechatToolbar({ title: "通讯录" , isMenuVisible: this.isMenuVisible})
+        WechatToolbar({ title: "通讯录" , isMenuVisible: this.isMenuVisible})
 
-        WechatToolbar2({ title: "通讯录" })
+        // WechatToolbar2({ title: "通讯录" })
         // 通讯录列表
         List({ scroller: this.scroller }) {
           // 遍历循环大组标签
@@ -115,11 +115,7 @@ export default struct Contact {
         .font({ size: 14 })
         .selectedFont({ size: 14 })
         .selectedColor(Color.Black)
-        .selectedBackgroundColor(Color.Transparent)
-        .usingPopup(true)
-        .popupColor(Color.Red)
-        .popupBackground("#57be6a")
-        .popupFont({ size: 32, weight: FontWeight.Bolder })
+        .selectedBackgroundColor(Color.Green)
         .itemSize(20)
         .alignStyle(IndexerAlign.Right)
         .margin({ top: 80 })
