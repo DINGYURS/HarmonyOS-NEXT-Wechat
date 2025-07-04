@@ -115,7 +115,7 @@ export default struct Contact {
         .font({ size: 14 })
         .selectedFont({ size: 14 })
         .selectedColor(Color.Black)
-        .selectedBackgroundColor(Color.Green)
+        .selectedBackgroundColor('#1dac60')
         .itemSize(20)
         .alignStyle(IndexerAlign.Right)
         .margin({ top: 80 })
