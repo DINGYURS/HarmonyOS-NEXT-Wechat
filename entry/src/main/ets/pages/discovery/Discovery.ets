@@ -21,7 +21,7 @@ export default struct Discovery {
         .lineCap(LineCapStyle.Round)
 
       ListMenuItem({ title: "扫一扫",
-        iconSrc: $r('app.media.ic_scan') })
+        iconSrc: $r('app.media.ic_scan_black') })
         .onClick(() => {
 
         })
