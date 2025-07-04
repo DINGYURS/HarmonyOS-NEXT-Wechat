@@ -5,6 +5,7 @@ import { router } from "@kit.ArkUI"
 export default struct LoginPage {
   @State username: string = ''
   @State password: string = ''
+  @State isLoading: boolean = false
 
   build() {
     Column() {
@@ -44,6 +45,9 @@ export default struct LoginPage {
           TextInput({
             placeholder: '请填写手机号'
           })
+            .onChange((value: string) => {
+              this.username = value;
+            })
             .borderRadius(10)
             .width('60%')
             .margin({ left: 10})
@@ -58,6 +62,9 @@ export default struct LoginPage {
           TextInput({
             placeholder: '请输入密码'
           })
+            .onChange((value: string) => {
+              this.password = value;
+            })
             .borderRadius(10)
             .width('60%')
             .margin({ left: 10})
@@ -66,26 +73,70 @@ export default struct LoginPage {
         .width('100%')
       }
 
+      Row() {
+        if (this.isLoading) {
+          LoadingProgress()
+            .color('#a5a5a5')
+            .width(30)
+            .height(30);
+        }
+      }
+      .width('100%')
+      .height(30)
+      .margin({ top: 30, bottom: 20})
+      .justifyContent(FlexAlign.Center)
+
       Text('上述手机号仅用于登录验证')
-        .margin({ top: 70, bottom: 20})
+        .margin({ bottom: 20})
         .fontSize(12)
         .fontColor('#a5a5a5')
 
       Button() {
         Text('登录')
           .fontColor('#f5fffb')
-          .fontSize(20)
-          .onClick(() => {
-            router.pushUrl({
-              url: 'pages/chat/ChatContentItemData'
-            })
-          })
+          .fontSize(18)
       }
       .width(180)
       .height(50)
       .borderRadius(10)
       .margin({ bottom: 20})
+      .enabled(!this.isLoading)
       .backgroundColor('#0cc160')
+      .onClick(() => {
+        if (this.username === '' || this.password === '') {
+          AlertDialog.show({
+            title: '登录失败',
+            message: '用户名或密码不能为空！',
+            confirm: {
+              value: '确定',
+              action: () => {
+                console.log('用户点击确定');
+              }
+            },
+          });
+          return;
+        }
+
+        this.isLoading = true;
+
+        setTimeout(() => {
+          if (this.username === '123456' && this.password === '123456') {
+            router.pushUrl({ url: 'pages/Index' });
+          } else {
+            AlertDialog.show({
+              title: '登录失败',
+              message: '用户名或密码错误！',
+              confirm: {
+                value: '确定',
+                action: () => {
+                  console.log('用户点击确定');
+                }
+              },
+            });
+          }
+          this.isLoading = false
+        }, 2000)
+      })
 
       Blank()
 
