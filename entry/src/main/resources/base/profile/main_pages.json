@@ -13,6 +13,7 @@
     "pages/qrcode/MyQrCodePage",
     "pages/HardwareIndexPage",
     "pages/login/LoginPage",
-    "pages/mine/MyPicture"
+    "pages/mine/MyPicture",
+    "pages/miniProgram/Program1"
   ]
 }

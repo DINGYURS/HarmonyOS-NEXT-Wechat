@@ -3,35 +3,26 @@ import prompt from '@ohos.promptAction'
 import WindowManager from '../utils/WindowManager'
 
 @Component
-export default struct WechatToolbar {
-  private title: string = "发现"
+export default struct WechatToolbar1 {
 
   build() {
-    Column() {
-      Stack() {
-        Text(this.title)
-          .fontColor(Color.Black)
-          .fontSize(19)
-          .fontWeight(500)
-
-        Row() {
-          Image($r("app.media.ic_search"))
-            .width(22)
-            .height(22)
-            .margin({ right: 20 })
-            .onClick(() => {
-              router.pushUrl({ url: 'pages/search/SearchPage' })
-            })
-        }
-        .height("100%")
-        .width("100%")
-        .alignItems(VerticalAlign.Center)
-        .justifyContent(FlexAlign.End)
-
+    Row() {
+      Row() {
+        Image($r('app.media.ic_arrow_left'))
+          .height(20)
+          .width(20)
+          .margin({ left: 16 }) // 设置左边距贴边
+          .onClick(() => {
+            router.back()
+          })
       }
-      .width("100%")
+      .width('100%')
       .height(53)
-    }.backgroundColor("#f0f0f0")
+      .alignItems(VerticalAlign.Center) // 垂直居中
+    }
+    .justifyContent(FlexAlign.Start) // Row 左对齐
+    .backgroundColor("#FEFEFE")
     .padding({ top: WindowManager.statusBarHeight })
   }
+
 }

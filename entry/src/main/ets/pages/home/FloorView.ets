@@ -1,19 +1,4 @@
-/*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-import { display, promptAction, Scale } from '@kit.ArkUI';
+import { display, promptAction, router, Scale } from '@kit.ArkUI';
 import { Animator as animator, AnimatorResult } from '@kit.ArkUI';
 import { AppInfo } from '../../model/AppInfo';
 import { logger } from '../../utils/Logger';
@@ -50,11 +35,11 @@ export struct FloorView {
   aboutToAppear() {
     // 将实用小程序图片、名称推入空数组
     for (let index = 1; index <= ICON_NUM_IN_USEFULNESS; index++) {
-      this.appInfoList.push(new AppInfo($r(`app.media.second_floor_ic_public_app${index}`), `App${index}`));
+      this.appInfoList.push(new AppInfo($r(`app.media.second_floor_ic_public_app${index}`), `Program${index}`));
     }
     // 将最近使用小程序图片、名称推入空数组
     for (let index = 1; index <= ICON_NUM_IN_RECENTLY; index++) {
-      this.miniAppInfoList.push(new AppInfo($r(`app.media.second_floor_ic_public_app${index}`), `App${index}`));
+      this.miniAppInfoList.push(new AppInfo($r(`app.media.second_floor_ic_public_app${index}`), `Program${index}`));
     }
   }
 
@@ -73,7 +58,7 @@ export struct FloorView {
       this.floorViewBuilder();
     }
     .id('floorView')
-    .width($r('app.string.second_floor_full_size'))
+    .width('100%')
     .height(this.floorHeight)
     // 固定二楼刚开始位置
     .position({
@@ -218,7 +203,7 @@ export struct FloorView {
     Column() {
       Column() {
         Blank()
-          .width($r('app.string.second_floor_full_size'))
+          .width('100%')
           .height(px2vp(this.topRectHeight))
         // 二楼标题
         this.secondFloorTitle();
@@ -237,46 +222,46 @@ export struct FloorView {
   secondFloorTitle() {
     Row() {
       Blank()
-        .width($r('app.integer.second_floor_main_page_title_blank_width'))
-      Text($r('app.string.second_floor_recently'))
-        .fontSize($r('app.integer.second_floor_main_page_title_blank_font_size'))
+        .width(150)
+      Text('最近')
+        .fontSize(18)
         .fontColor(Color.White)
       Row() {
         Image($r('app.media.second_floor_search'))
-          .width($r('app.integer.second_floor_second_floor_title_image'))
-          .height($r('app.integer.second_floor_second_floor_title_image'))
-        Text($r('app.string.second_floor_search'))
-          .width($r('app.integer.second_floor_second_floor_title_text_width'))
-          .height($r('app.integer.second_floor_second_floor_title_image'))
-          .fontSize($r('app.integer.second_floor_second_floor_title_text_font_size'))
+          .width(20)
+          .height(20)
+        Text('搜索')
+          .width(40)
+          .height(20)
+          .fontSize(12)
           .padding({
-            left: $r('app.integer.second_floor_second_floor_title_text_padding'),
+            left: 3,
             top: 0,
             bottom: 0,
             right: 0
           })
       }
-      .backgroundColor($r('app.color.second_floor_second_floor_title_color'))
+      .backgroundColor('#ffffff')
       .opacity(0.6)
       .padding({
-        left: $r('app.integer.second_floor_second_floor_title_padding_left'),
-        right: $r('app.integer.second_floor_second_floor_title_padding_left'),
-        top: $r('app.integer.second_floor_second_floor_title_padding_top'),
-        bottom: $r('app.integer.second_floor_second_floor_title_padding_top')
+        left: 2,
+        right: 2,
+        top: 1,
+        bottom: 1
       })
-      .borderRadius($r('app.integer.second_floor_second_floor_title_border_radius'))
-      .border({ width: 1.5, color: $r('app.color.second_floor_chat_view_border_color') })
-      .margin({ left: $r('app.integer.second_floor_second_floor_title_margin_left') })
+      .borderRadius(20)
+      .border({ width: 1.5, color: '#e4e4e4' })
+      .margin({ left: 90 })
       .onClick(() => {
         // 调用Toast显示提示:此样式仅为案例展示
-        promptAction.showToast({ message: $r("app.string.second_floor_toast_tips") });
+        promptAction.showToast({ message: '仅用作美化，请根据业务需要自行实现' });
       })
     }
     .scale(this.miniAppScale)
-    .width($r('app.string.second_floor_full_size'))
-    .height($r('app.string.second_floor_second_floor_title_height'))
+    .width('100%')
+    .height('8%')
     .justifyContent(FlexAlign.SpaceAround)
-    .margin({ bottom: $r('app.integer.second_floor_second_floor_title_margin') })
+    .margin({ bottom: 30 })
   }
 
   /**
@@ -291,23 +276,23 @@ export struct FloorView {
       this.recentlyUsedMiniApps();
     }
     // .height(500)
-    .width($r('app.string.second_floor_full_size'))
+    .width('100%')
     .layoutWeight(1)
   }
 
   /**
-   * 实用小程序
+   * 听一听下方小程序
    */
   @Builder
   usefulnessMiniApps() {
     Column() {
       // 标题
-      Text($r('app.string.second_floor_usefulness_mini_apps_title'))
-        .fontSize($r('app.integer.second_floor_usefulness_mini_apps_font_size'))
+      Text('听一听')
+        .fontSize(14)
         .textAlign(TextAlign.Start)
-        .width($r('app.string.second_floor_usefulness_mini_apps_width'))
-        .margin({ bottom: $r('app.integer.second_floor_usefulness_mini_apps_text_margin') })
-        .fontColor($r('app.color.second_floor_screen_color'))
+        .width('90%')
+        .margin({ bottom: 12})
+        .fontColor('#EDEDED')
 
       // 图标
       Row() {
@@ -319,13 +304,13 @@ export struct FloorView {
         this.recentlyPlayed();
       }
       .justifyContent(FlexAlign.SpaceAround)
-      .width($r('app.string.second_floor_full_size'))
+      .width('100%')
     }
     .padding({
-      left: $r('app.integer.second_floor_usefulness_mini_apps_padding'),
-      right: $r('app.integer.second_floor_usefulness_mini_apps_padding')
+      left: 5,
+      right: 5
     })
-    .margin({ bottom: $r('app.integer.second_floor_usefulness_mini_apps_margin') })
+    .margin({ bottom: 50 })
   }
 
   /**
@@ -333,21 +318,21 @@ export struct FloorView {
    */
   @Builder
   secondFloorComp(app: AppInfo) {
-    Row() {
+
+    Row() { // 去掉前缀非数字部分，保留数字
       Column() {
         Image(app.icon)
-          .height($r('app.integer.second_floor_chat_view_image'))
-          .width($r('app.integer.second_floor_chat_view_image'))
-          .borderRadius($r('app.integer.second_floor_second_floor_comp_border_radius'))
+          .height(48)
+          .width(48)
+          .borderRadius(100)
         Text(app.name)
-          .fontSize($r('app.integer.second_floor_chat_view_userinfo_name_font_size'))
+          .fontSize(16)
           .fontColor(Color.White)
       }
     }
-    .margin({ left: $r('app.integer.second_floor_second_floor_comp_margin') })
+    .margin({ left: 20 })
     .onClick(() => {
-      // 调用Toast显示提示:此样式仅为案例展示
-      promptAction.showToast({ message: $r("app.string.second_floor_toast_tips") });
+      router.pushUrl({ url: `pages/miniProgram/${app.name}` })
     })
   }
 
@@ -359,42 +344,41 @@ export struct FloorView {
     Column() {
       Row() {
         Image($r('app.media.second_floor_play'))
-          .width($r('app.integer.second_floor_recently_played_image_width'))
-          .height($r('app.integer.second_floor_recently_played_image_width'))
-        Text($r('app.string.second_floor_recently_played_content'))
-          .width($r('app.string.second_floor_recently_played_content'))
-          .height($r('app.integer.second_floor_recently_played_text_input_width'))
+          .width(20)
+          .height(20)
+        Text('暂无内容')
+          .height(80)
           .padding({
-            left: $r('app.integer.second_floor_recently_played_text_input_padding'),
+            left: 6,
             top: 0,
             bottom: 0,
             right: 0
           })
-          .fontSize($r('app.integer.second_floor_recently_played_text_font_size'))
+          .fontSize(16)
       }
       .opacity(0.6)
-      .backgroundColor($r('app.color.second_floor_second_floor_title_color'))
-      .height($r('app.integer.second_floor_recently_played_row_height'))
-      .width($r('app.integer.second_floor_recently_played_row_width'))
+      .backgroundColor('#ffffff')
+      .height(40)
+      .width(120)
       .padding({
-        left: $r('app.integer.second_floor_recently_played_row_padding_left'),
-        right: $r('app.integer.second_floor_recently_played_row_padding_right'),
-        top: $r('app.integer.second_floor_recently_played_row_padding_top'),
-        bottom: $r('app.integer.second_floor_recently_played_row_padding_top')
+        left: 6,
+        right: 12,
+        top: 9,
+        bottom: 9
       })
-      .borderRadius($r('app.integer.second_floor_recently_played_row_border_radius'))
-      .border({ width: 1.5, color: $r('app.color.second_floor_chat_view_border_color') })
-      .margin({ bottom: $r('app.integer.second_floor_recently_played_row_margin') })
+      .borderRadius(20)
+      .border({ width: 1.5, color: '#e4e4e4' })
+      .margin({ bottom: 5 })
       .onClick(() => {
         // 调用Toast显示提示:此样式仅为案例展示
-        promptAction.showToast({ message: $r("app.string.second_floor_toast_tips") });
+        promptAction.showToast({ message: '仅用作美化，请根据业务需要自行实现' });
       })
 
-      Text($r('app.string.second_floor_recently_played'))
-        .fontSize($r('app.integer.second_floor_recently_played_text_font_size'))
+      Text('最近播放')
+        .fontSize(16)
         .fontColor(Color.White)
     }
-    .margin({ right: $r('app.integer.second_floor_recently_played_margin') })
+    .margin({ right: 30})
   }
 
   /**
@@ -405,28 +389,28 @@ export struct FloorView {
     Column() {
       // 标题
       Row() {
-        Text($r('app.string.second_floor_recently_used_mini_apps'))
-          .fontSize($r('app.integer.second_floor_usefulness_mini_apps_font_size'))
-          .fontColor($r('app.color.second_floor_screen_color'))
+        Text('最近使用的小程序')
+          .fontSize(14)
+          .fontColor('#EDEDED')
         Row() {
-          Text($r('app.string.second_floor_more'))
-            .fontSize($r('app.integer.second_floor_usefulness_mini_apps_font_size'))
-            .fontColor($r('app.color.second_floor_screen_color'))
+          Text('更多')
+            .fontSize(14)
+            .fontColor('#EDEDED')
           Image($r('app.media.second_floor_right'))
-            .width($r('app.integer.second_floor_recently_played_image_width'))
-            .height($r('app.integer.second_floor_recently_played_image_width'))
+            .width(20)
+            .height(20)
         }
         .onClick(() => {
           // 调用Toast显示提示:此样式仅为案例展示
-          promptAction.showToast({ message: $r("app.string.second_floor_toast_tips") });
+          promptAction.showToast({ message: '仅用作美化，请根据业务需要自行实现' });
         })
       }
-      .width($r('app.string.second_floor_usefulness_mini_apps_width'))
+      .width('90%')
       .justifyContent(FlexAlign.SpaceBetween)
       .margin({
-        bottom: $r('app.integer.second_floor_usefulness_mini_apps_row_margin'),
-        right: $r('app.integer.second_floor_usefulness_mini_apps_row_margin'),
-        left: $r('app.integer.second_floor_usefulness_mini_apps_row_margin')
+        bottom: 12,
+        right: 12,
+        left: 12
       })
 
       // 常用小程序
@@ -457,12 +441,12 @@ export struct FloorView {
         }
 
       }
-      .width($r('app.string.second_floor_recently_used_mini_apps_width'))
-      .height($r('app.integer.second_floor_recently_used_mini_apps_height'))
+      .width('95%')
+      .height(300)
       .margin({
-        bottom: $r('app.integer.second_floor_recently_used_mini_apps_margin'),
-        right: $r('app.integer.second_floor_recently_used_mini_apps_margin'),
-        left: $r('app.integer.second_floor_recently_used_mini_apps_margin')
+        bottom: 12,
+        right: 12,
+        left: 12
       })
     }
   }
