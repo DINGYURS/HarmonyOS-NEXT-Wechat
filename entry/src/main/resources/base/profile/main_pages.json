@@ -12,6 +12,7 @@
     "pages/chat/ChatPage6",
     "pages/qrcode/MyQrCodePage",
     "pages/HardwareIndexPage",
-    "pages/login/LoginPage"
+    "pages/login/LoginPage",
+    "pages/mine/MyPicture"
   ]
 }

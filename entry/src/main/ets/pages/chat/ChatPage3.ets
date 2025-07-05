@@ -106,18 +106,11 @@ export default struct ChatPage {
   @State private showFuncBar: boolean = false;
   @State private dataList: ChatContentItemData[] = [
     {
-      name: "刘文熙",
-      headSrc: $r("app.media.myPic"),
-      msgType: 0,
-      self: true,
-      msg: "怎么边挂方舟还边看张宇"
-    },
-    {
       name: (router.getParams() as ChatPageParam).name,
       headSrc: (router.getParams() as ChatPageParam).headSrc,
       msgType: 0,
       self: false,
-      msg: "有脚本真方便，挂在那就好了"
+      msg: "小姐姐你醒了吗"
     },
     {
       name: (router.getParams() as ChatPageParam).name,
@@ -125,56 +118,43 @@ export default struct ChatPage {
       msgType: 1,
       self: false,
       msg: "",
-      img: $r("app.media.hrybulaoshi")
+      img: $r('app.media.bqb_out')
     },
     {
-      name: "刘文熙",
+      name: "GOODMORNING",
       headSrc: $r("app.media.myPic"),
       msgType: 0,
       self: true,
-      msg: "等会你这张宇不是高数啊"
+      msg: "醒了"
     },
     {
       name: (router.getParams() as ChatPageParam).name,
       headSrc: (router.getParams() as ChatPageParam).headSrc,
       msgType: 0,
       self: false,
-      msg: "高数的课看完了"
+      msg: "我出去又忘记拿钥匙了"
     },
     {
-      name: "刘文熙",
+      name: "GOODMORNING",
       headSrc: $r("app.media.myPic"),
       msgType: 0,
       self: true,
-      msg: "高数就学完了？？"
+      msg: "我去"
     },
     {
-      name: "刘文熙",
+      name: "GOODMORNING",
+      headSrc: $r("app.media.myPic"),
+      msgType: 1,
+      self: true,
+      msg: "",
+      img: $r('app.media.bqb_lt2')
+    },
+    {
+      name: "GOODMORNING",
       headSrc: $r("app.media.myPic"),
       msgType: 0,
       self: true,
-      msg: "你线代学哪了"
-    },
-    {
-      name: (router.getParams() as ChatPageParam).name,
-      headSrc: (router.getParams() as ChatPageParam).headSrc,
-      msgType: 0,
-      self: false,
-      msg: "我线代差不多过一半了"
-    },
-    {
-      name: "刘文熙",
-      headSrc: $r("app.media.myPic"),
-      msgType: 0,
-      self: true,
-      msg: "woc打算冲c9啊"
-    },
-    {
-      name: (router.getParams() as ChatPageParam).name,
-      headSrc: (router.getParams() as ChatPageParam).headSrc,
-      msgType: 0,
-      self: false,
-      msg: "哎上个差不多的985得了，要上c9还是太累了"
+      msg: "等我一下来给你开门了"
     },
     {
       name: (router.getParams() as ChatPageParam).name,
@@ -182,30 +162,7 @@ export default struct ChatPage {
       msgType: 1,
       self: false,
       msg: "",
-      img: $r("app.media.tangping")
-    },
-    {
-      name: "刘文熙",
-      headSrc: $r("app.media.myPic"),
-      msgType: 0,
-      self: true,
-      msg: "又在凡尔赛"
-    },
-    {
-      name: "刘文熙",
-      headSrc: $r("app.media.myPic"),
-      msgType: 1,
-      self: true,
-      msg: "",
-      img: $r("app.media.nixiaozi")
-    },
-    {
-      name: (router.getParams() as ChatPageParam).name,
-      headSrc: (router.getParams() as ChatPageParam).headSrc,
-      msgType: 1,
-      self: false,
-      msg: "",
-      img: $r("app.media.hryyilaoshi")
+      img: $r('app.media.bqb_heart')
     }
   ]
   // 输入框内容
@@ -338,7 +295,7 @@ export default struct ChatPage {
     //   插入到消息数组中
     this.chatList.push(voiceChat)
     this.dataList.push({
-      name: "刘文熙",
+      name: "GOODMORNING",
       headSrc: $r("app.media.myPic"),
       msgType: 2,
       voicePath: res.recordFilePath,
@@ -521,7 +478,7 @@ export default struct ChatPage {
 
   private sendTextMsg() {
     this.dataList.push({
-      name: "刘文熙",
+      name: "GOODMORNING",
       headSrc: $r("app.media.myPic"),
       msgType: 0,
       self: true,

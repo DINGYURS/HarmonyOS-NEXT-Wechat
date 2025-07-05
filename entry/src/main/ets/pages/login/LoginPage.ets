@@ -29,7 +29,7 @@ export default struct LoginPage {
         Row() {
           Text('国家/地区')
             .width('30%')
-            .textAlign(TextAlign.Center)
+            .textAlign(TextAlign.Start)
           Text('中国大陆（+86）')
             .fontColor('#0cc161')
             .width('60%')
@@ -39,7 +39,7 @@ export default struct LoginPage {
         Row() {
           Text('手机号')
             .width('30%')
-            .textAlign(TextAlign.Center)
+            .textAlign(TextAlign.Start)
           TextInput({
             placeholder: '请填写手机号'
           })
@@ -48,14 +48,13 @@ export default struct LoginPage {
             })
             .borderRadius(10)
             .width('60%')
-            .margin({ left: 10})
         }
         .justifyContent(FlexAlign.Center)
 
         Row() {
           Text('密码')
             .width('30%')
-            .textAlign(TextAlign.Center)
+            .textAlign(TextAlign.Start)
           TextInput({
             placeholder: '请输入密码'
           })
@@ -64,7 +63,6 @@ export default struct LoginPage {
             })
             .borderRadius(10)
             .width('60%')
-            .margin({ left: 10})
         }
         .justifyContent(FlexAlign.Center)
       }
@@ -150,11 +148,10 @@ export default struct LoginPage {
       }
       .justifyContent(FlexAlign.Center)
       .width('100%')
-      .margin({ bottom: 50})
+      .margin({ bottom: 80})
     }
     .height('100%')
     .width('100%')
-    .padding(10)
-    .backgroundColor(Color.Pink)
+    .padding(20)
   }
 }

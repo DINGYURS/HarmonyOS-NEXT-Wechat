@@ -49,7 +49,7 @@ export default struct FirstPage {
         }
         .width('100%')
         .justifyContent(FlexAlign.SpaceAround)
-        .margin({ bottom: 30 })
+        .margin({ bottom: 70 })
       }
     }
     .width('100%')

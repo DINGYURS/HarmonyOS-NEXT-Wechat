@@ -19,11 +19,7 @@ export default struct Mine {
             .margin({ left: 20 ,right: 10 })
             .borderRadius(8)
             .onClick(() => {
-              PhotoPickerUtils.openGallery(
-                uri => {
-                  this.imgPath = uri;
-                }, errMsg => {
-                ToastUtils.show(errMsg)
+              router.pushUrl({ url: 'pages/mine/MyPicture'
               })
             })
         }
@@ -45,6 +41,7 @@ export default struct Mine {
         .alignItems(HorizontalAlign.Start)
 
         Blank()
+
         Image($r('app.media.ic_qrcode'))
           .width(16)
           .height(16)
@@ -70,7 +67,7 @@ export default struct Mine {
         .lineCap(LineCapStyle.Round)
       ListMenuItem({
         title: "服务",
-        iconSrc: $r('app.media.ic_service')
+        iconSrc: $r('app.media.ic_service'),
       })
         .onClick(unDevTip)
       Divider()

@@ -36,7 +36,6 @@ export default struct RegisterPage {
           TextInput({
             placeholder: '例如：陈晨'
           })
-            .fontColor('#a5a5a5')
             .width('60%')
             .borderRadius(10)
             .onChange((value: string) => {
@@ -208,6 +207,6 @@ export default struct RegisterPage {
     }
     .height('100%')
     .width('100%')
-    .padding(10)
+    .padding(20)
   }
 }

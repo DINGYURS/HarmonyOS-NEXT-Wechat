@@ -1,10 +1,10 @@
 @Preview
 @Component
 export default struct ListChatItem {
-  data: ChatItemData = { headSrc: $r("app.media.ic_user_head1"),
-    nickname: "同事小李",
-    content: "领导，报给写好了，请过目",
-    time: "14:12"
+  data: ChatItemData = { headSrc: $r("app.media.user_head_dy"),
+    nickname: "町榆",
+    content: "[动画表情]",
+    time: "17:21"
   }
 
   build() {

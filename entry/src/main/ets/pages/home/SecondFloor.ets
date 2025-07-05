@@ -60,35 +60,35 @@ export struct SecondFloor {
 
   @State chatList: ChatItemData[] = [
     {
-      headSrc: $r("app.media.ic_user_lzy"),
-      nickname: "刘智勇",
-      content: "小心点别又被陶老师抓到了",
+      headSrc: $r('app.media.user_head_dy'),
+      nickname: "町榆",
+      content: "[动画表情]",
       time: "17:21"
     },
     {
-      headSrc: $r("app.media.ic_user_zml"),
-      nickname: "朱明亮",
-      content: "刚才还秒了道黑题",
-      time: "15:38"
+      headSrc: $r("app.media.user_head_mm"),
+      nickname: "妹妹",
+      content: "高中生就是苦啊",
+      time: "10:38"
     },
-    { headSrc: $r("app.media.ic_user_hry"),
-      nickname: "韩荣宇",
+    { headSrc: $r("app.media.user_head_lyy"),
+      nickname: "林依依",
       content: "[动画表情]",
-      time: "14:12"
+      time: "08:12"
     },
-    { headSrc: $r("app.media.ic_user_wcy"),
-      nickname: "王朝永",
-      content: "[动画表情]",
-      time: "12:08"
+    { headSrc: $r("app.media.user_head_zxz"),
+      nickname: "朱星兆",
+      content: "安可好",
+      time: "星期二"
     },
-    { headSrc: $r("app.media.ic_user_wyl"),
-      nickname: "吴悠律",
-      content: "太感谢啦！",
-      time: "昨天" },
+    { headSrc: $r("app.media.user_head_wxy"),
+      nickname: "王晓雨",
+      content: "okok",
+      time: "星期一" },
     { headSrc: $r("app.media.ic_user_files"),
       nickname: "文件传输助手",
       content: "打印信息安全的PPT",
-      time: "周一" }
+      time: "6月20日" }
   ]
   @State isMenuVisible: boolean = false; // 用于控制菜单显示隐藏
 

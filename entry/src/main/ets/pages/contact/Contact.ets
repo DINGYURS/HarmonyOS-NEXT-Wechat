@@ -1,9 +1,5 @@
-import prompt from '@ohos.promptAction'
 import router from '@ohos.router'
 import ListContactItem from '../../component/ListContactItem'
-import WechatToolbar from '../../component/WechatToolbar'
-import ChatFunctionBar from '../chat/ChatFuntionBar'
-import ChatPage from '../chat/ChatPage1'
 import DataItem, { ContactItem } from './DataItem'
 import WechatToolbar2 from '../../component/WechatToolbar2'
 
@@ -22,34 +18,39 @@ export default struct Contact {
       ]
     },
     {
-      title: 'H',
+      title: 'D',
       contactList: [
-        { name: "韩荣宇", head: $r("app.media.ic_user_hry"), chatPage: 'pages/chat/ChatPage3' }
+        { name: "町榆", head: $r("app.media.user_head_dy"), chatPage: 'pages/chat/ChatPage1' }
       ]
     },
     {
-      title: 'L',
+      title: 'H',
       contactList: [
-        { name: "刘智勇", head: $r("app.media.ic_user_lzy"), chatPage: 'pages/chat/ChatPage1'}
+        { name: "林依依", head: $r("app.media.user_head_lyy"), chatPage: 'pages/chat/ChatPage3' }
+      ]
+    },
+    {
+      title: 'M',
+      contactList: [
+        { name: "妹妹", head: $r("app.media.user_head_mm"), chatPage: 'pages/chat/ChatPage2' }
       ]
     },
     {
       title: 'W',
       contactList: [
-        { name: "王朝永", head: $r("app.media.ic_user_wcy"), chatPage: 'pages/chat/ChatPage4'},
         { name: "文件传输助手", head: $r("app.media.ic_user_files"), chatPage: 'pages/chat/ChatPage6'},
-        { name: "吴悠律", head: $r("app.media.ic_user_wyl"), chatPage: 'pages/chat/ChatPage5'}
+        { name: "王晓雨", head: $r("app.media.user_head_wxy"), chatPage: 'pages/chat/ChatPage5'}
       ]
     },
     {
       title: 'Z',
       contactList: [
-        { name: "朱明亮", head: $r("app.media.ic_user_zml"), chatPage: 'pages/chat/ChatPage2'}
+        { name: "朱星兆", head: $r("app.media.user_head_zxz"), chatPage: 'pages/chat/ChatPage4'}
       ]
     }
   ];
   private letterList: string[] =
-    ['↑', '☆', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U',
+    ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U',
       'V', 'W', 'X', 'Y', 'Z', '#']
 
   @Builder
@@ -70,7 +71,6 @@ export default struct Contact {
 
       Column() {
         // 标题栏
-        // WechatToolbar({ title: "通讯录" , isMenuVisible: this.isMenuVisible})
 
         WechatToolbar2({ title: "通讯录" })
         // 通讯录列表
@@ -98,7 +98,7 @@ export default struct Contact {
               color: '#f0f0f0',
               startMargin: 85,
               endMargin: 0
-            }) // 每行之间的分界线
+            })
           })
         }
         .width('100%')
@@ -116,7 +116,6 @@ export default struct Contact {
         .selectedColor(Color.Black)
         .selectedBackgroundColor('#1dac60')
         .itemSize(20)
-        .alignStyle(IndexerAlign.Right)
         .margin({ top: 80 })
         .onSelect((index: number) => {
           let letter = this.letterList[index]
@@ -124,15 +123,14 @@ export default struct Contact {
           for (const item of this.dataList) {
             if (letter === item.title) {
               this.scroller.scrollToIndex(target)
-              prompt.showToast({ message: "" + target })
               break
             }
             target++
           }
         })
 
-    }.width("100%")
+    }
+    .width("100%")
     .height("100%")
-
   }
 }
