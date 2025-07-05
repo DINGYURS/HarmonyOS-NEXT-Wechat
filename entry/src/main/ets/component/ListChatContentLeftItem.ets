@@ -15,6 +15,7 @@ export default struct ListChatContentLeftItem {
         .margin({ left: 20, right: 8 })
         .objectFit(ImageFit.Cover)
 
+      // 绘制 SVG 路径，模拟左侧三角箭头
       Path()
         .commands(`M${vp2px(10)} 0 L0 ${vp2px(7)} ${vp2px(10)} ${vp2px(14)} Z`)
         .fill('rgb(255,255,255)')
