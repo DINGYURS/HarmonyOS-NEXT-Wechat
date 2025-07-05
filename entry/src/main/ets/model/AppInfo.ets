@@ -18,11 +18,13 @@
  */
 @Observed
 export class AppInfo {
+  id: string = '';
   icon: ResourceStr = '';
   name: ResourceStr = '';
   visible: boolean = true;
 
-  constructor(icon: ResourceStr = '', name: ResourceStr = '', visible: boolean = true) {
+  constructor(id: string = '', icon: ResourceStr = '', name: ResourceStr = '', visible: boolean = true) {
+    this.id = id;
     this.icon = icon;
     this.name = name;
     this.visible = visible;

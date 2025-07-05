@@ -128,5 +128,5 @@ export default struct Mine {
 }
 
 const unDevTip = () => {
-  ToastUtils.show("该功能尚未开发...")
+  ToastUtils.show("敬请期待...")
 }

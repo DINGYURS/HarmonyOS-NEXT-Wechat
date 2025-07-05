@@ -1,4 +1,5 @@
 import { promptAction } from '@kit.ArkUI'
+import WechatToolbar1 from '../../component/WechatToolbar1'
 
 // 使用装饰器来观察数据变化
 @ObservedV2
@@ -170,6 +171,7 @@ struct MemoryGame {
 
   build() {
     Column({ space: 20 }) {
+      WechatToolbar1()
       Flex({ wrap: FlexWrap.Wrap }) {
         ForEach(this.gameCells, (gameCell: GameCell, index: number) => {
           Text(`${gameCell.isVisible ? gameCell.value : ''}`)

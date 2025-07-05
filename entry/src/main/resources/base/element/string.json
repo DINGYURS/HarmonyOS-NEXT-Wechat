@@ -10,7 +10,7 @@
     },
     {
       "name": "EntryAbility_label",
-      "value": "微信鸿蒙版"
+      "value": "微信"
     },
     {
       "name": "net_permission_reason",
@@ -86,7 +86,7 @@
     },
     {
       "name": "second_floor_toast_tips",
-      "value": "仅用作美化，请根据业务需要自行实现"
+      "value": "敬请期待..."
     }
   ]
 }

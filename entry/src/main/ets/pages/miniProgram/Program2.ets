@@ -1,5 +1,6 @@
 import { HashMap } from '@kit.ArkTS'
 import { AppUtil, PreferencesUtil, ToastUtil } from '@pura/harmony-utils'
+import WechatToolbar1 from '../../component/WechatToolbar1'
 
 // index.ets
 @Entry
@@ -140,6 +141,7 @@ struct Game2048 {
 
   build() {
     Column() {
+      WechatToolbar1()
       // 分数显示行
       Row() {
         Text(`得分: ${this.score}`)

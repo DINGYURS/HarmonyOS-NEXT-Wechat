@@ -31,15 +31,16 @@ export struct FloorView {
   @State appInfoList: AppInfo[] = []; // 实用小程序数组
   @State miniAppInfoList: AppInfo[] = []; // 最近使用小程序数组
   private backAnimator: AnimatorResult | undefined = undefined;
+  private miniProgramTitle: string[] = ["万年历", "2048", "记忆消消乐", "古茗", "校友邦", "肯德基", "库迪", "瑞幸"]
 
   aboutToAppear() {
     // 将实用小程序图片、名称推入空数组
     for (let index = 1; index <= ICON_NUM_IN_USEFULNESS; index++) {
-      this.appInfoList.push(new AppInfo($r(`app.media.second_floor_ic_public_app${index}`), `Program${index}`));
+      this.appInfoList.push(new AppInfo(`${index}`, $r(`app.media.second_floor_ic_public_app${index}`), `${this.miniProgramTitle[index-1]}`));
     }
     // 将最近使用小程序图片、名称推入空数组
     for (let index = 1; index <= ICON_NUM_IN_RECENTLY; index++) {
-      this.miniAppInfoList.push(new AppInfo($r(`app.media.second_floor_ic_public_app${index}`), `Program${index}`));
+      this.miniAppInfoList.push(new AppInfo(`${index}`, $r(`app.media.second_floor_ic_public_app${index}`), `${this.miniProgramTitle[index-1]}`));
     }
   }
 
@@ -254,7 +255,7 @@ export struct FloorView {
       .margin({ left: 90 })
       .onClick(() => {
         // 调用Toast显示提示:此样式仅为案例展示
-        promptAction.showToast({ message: '仅用作美化，请根据业务需要自行实现' });
+        promptAction.showToast({ message: '敬请期待...' });
       })
     }
     .scale(this.miniAppScale)
@@ -332,7 +333,7 @@ export struct FloorView {
     }
     .margin({ left: 20 })
     .onClick(() => {
-      router.pushUrl({ url: `pages/miniProgram/${app.name}` })
+      router.pushUrl({ url: `pages/miniProgram/Program${app.id}`})
     })
   }
 
@@ -371,7 +372,7 @@ export struct FloorView {
       .margin({ bottom: 5 })
       .onClick(() => {
         // 调用Toast显示提示:此样式仅为案例展示
-        promptAction.showToast({ message: '仅用作美化，请根据业务需要自行实现' });
+        promptAction.showToast({ message: '敬请期待...' });
       })
 
       Text('最近播放')
@@ -402,7 +403,7 @@ export struct FloorView {
         }
         .onClick(() => {
           // 调用Toast显示提示:此样式仅为案例展示
-          promptAction.showToast({ message: '仅用作美化，请根据业务需要自行实现' });
+          promptAction.showToast({ message: '敬请期待...' });
         })
       }
       .width('90%')

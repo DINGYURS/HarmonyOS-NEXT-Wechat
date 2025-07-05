@@ -14,6 +14,8 @@
     "pages/HardwareIndexPage",
     "pages/login/LoginPage",
     "pages/mine/MyPicture",
-    "pages/miniProgram/Program1"
+    "pages/miniProgram/Program1",
+    "pages/miniProgram/Program2",
+    "pages/miniProgram/Program3"
   ]
 }

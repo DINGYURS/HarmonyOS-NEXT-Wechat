@@ -50,7 +50,7 @@ interface HistoryTodayData {
 
 @Entry
 @Component
-struct Program1 {
+struct PerpetualCalendar {
   @State calendarData: CalendarData = {
     code: 0,
     ynian: '',
@@ -151,11 +151,11 @@ struct Program1 {
   build() {
     Column() {
       if (this.loading) {
-        Text('📆 正在加载...')
+        Text('正在加载...')
           .fontSize(20)
           .padding(20)
       } else if (this.error !== '') {
-        Text('❌ 错误：' + this.error)
+        Text('错误：' + this.error)
           .fontSize(18)
           .fontColor(Color.Red)
           .padding(20)
