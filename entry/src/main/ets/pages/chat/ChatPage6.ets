@@ -107,7 +107,7 @@ export default struct ChatPage {
   @State private dataList: ChatContentItemData[] = [
     {
       name: "刘文熙",
-      headSrc: $r("app.media.ic_user_lwx"),
+      headSrc: $r("app.media.myPic"),
       msgType: 0,
       self: true,
       msg: "打印信息安全的PPT"
@@ -244,7 +244,7 @@ export default struct ChatPage {
     this.chatList.push(voiceChat)
     this.dataList.push({
       name: "刘文熙",
-      headSrc: $r("app.media.ic_user_lwx"),
+      headSrc: $r("app.media.myPic"),
       msgType: 2,
       voicePath: res.recordFilePath,
       self: true,
@@ -427,7 +427,7 @@ export default struct ChatPage {
   private sendTextMsg() {
     this.dataList.push({
       name: "刘文熙",
-      headSrc: $r("app.media.ic_user_lwx"),
+      headSrc: $r("app.media.myPic"),
       msgType: 0,
       self: true,
       msg: this.chatText,

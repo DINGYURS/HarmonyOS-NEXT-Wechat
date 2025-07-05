@@ -18,7 +18,7 @@ export default struct LoginPage {
       }
       .width('100%')
       .justifyContent(FlexAlign.Start)
-      .margin({ bottom: 20})
+      .margin({ top: 40 , bottom: 30})
 
       Text('手机号登录')
         .fontSize(25)
@@ -150,10 +150,11 @@ export default struct LoginPage {
       }
       .justifyContent(FlexAlign.Center)
       .width('100%')
-      .margin({ bottom: 20})
+      .margin({ bottom: 50})
     }
     .height('100%')
     .width('100%')
-    .padding(20)
+    .padding(10)
+    .backgroundColor(Color.Pink)
   }
 }

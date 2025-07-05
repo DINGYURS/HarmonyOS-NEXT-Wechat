@@ -107,7 +107,7 @@ export default struct ChatPage {
   @State private dataList: ChatContentItemData[] = [
     {
       name: "刘文熙",
-      headSrc: $r("app.media.ic_user_lwx"),
+      headSrc: $r("app.media.myPic"),
       msgType: 0,
       self: true,
       msg: "离下课还有多久？"
@@ -121,7 +121,7 @@ export default struct ChatPage {
     },
     {
       name: "刘文熙",
-      headSrc: $r("app.media.ic_user_lwx"),
+      headSrc: $r("app.media.myPic"),
       msgType: 1,
       self: true,
       msg: "",
@@ -129,7 +129,7 @@ export default struct ChatPage {
     },
     {
       name: "刘文熙",
-      headSrc: $r("app.media.ic_user_lwx"),
+      headSrc: $r("app.media.myPic"),
       msgType: 0,
       self: true,
       msg: "我忘带电脑充电器了。。。",
@@ -158,14 +158,14 @@ export default struct ChatPage {
     },
     {
       name: "刘文熙",
-      headSrc: $r("app.media.ic_user_lwx"),
+      headSrc: $r("app.media.myPic"),
       msgType: 0,
       self: true,
       msg: "哎瓦学弟真服了"
     },
     {
       name: "刘文熙",
-      headSrc: $r("app.media.ic_user_lwx"),
+      headSrc: $r("app.media.myPic"),
       msgType: 0,
       self: true,
       msg: "小心点别又被陶老师抓到了"
@@ -302,7 +302,7 @@ export default struct ChatPage {
     this.chatList.push(voiceChat)
     this.dataList.push({
       name: "刘文熙",
-      headSrc: $r("app.media.ic_user_lwx"),
+      headSrc: $r("app.media.myPic"),
       msgType: 2,
       voicePath: res.recordFilePath,
       self: true,
@@ -485,7 +485,7 @@ export default struct ChatPage {
   private sendTextMsg() {
     this.dataList.push({
       name: "刘文熙",
-      headSrc: $r("app.media.ic_user_lwx"),
+      headSrc: $r("app.media.myPic"),
       msgType: 0,
       self: true,
       msg: this.chatText,

@@ -107,7 +107,7 @@ export default struct ChatPage {
   @State private dataList: ChatContentItemData[] = [
     {
       name: "刘文熙",
-      headSrc: $r("app.media.ic_user_lwx"),
+      headSrc: $r("app.media.myPic"),
       msgType: 0,
       self: true,
       msg: "怎么边挂方舟还边看张宇"
@@ -129,7 +129,7 @@ export default struct ChatPage {
     },
     {
       name: "刘文熙",
-      headSrc: $r("app.media.ic_user_lwx"),
+      headSrc: $r("app.media.myPic"),
       msgType: 0,
       self: true,
       msg: "等会你这张宇不是高数啊"
@@ -143,14 +143,14 @@ export default struct ChatPage {
     },
     {
       name: "刘文熙",
-      headSrc: $r("app.media.ic_user_lwx"),
+      headSrc: $r("app.media.myPic"),
       msgType: 0,
       self: true,
       msg: "高数就学完了？？"
     },
     {
       name: "刘文熙",
-      headSrc: $r("app.media.ic_user_lwx"),
+      headSrc: $r("app.media.myPic"),
       msgType: 0,
       self: true,
       msg: "你线代学哪了"
@@ -164,7 +164,7 @@ export default struct ChatPage {
     },
     {
       name: "刘文熙",
-      headSrc: $r("app.media.ic_user_lwx"),
+      headSrc: $r("app.media.myPic"),
       msgType: 0,
       self: true,
       msg: "woc打算冲c9啊"
@@ -186,14 +186,14 @@ export default struct ChatPage {
     },
     {
       name: "刘文熙",
-      headSrc: $r("app.media.ic_user_lwx"),
+      headSrc: $r("app.media.myPic"),
       msgType: 0,
       self: true,
       msg: "又在凡尔赛"
     },
     {
       name: "刘文熙",
-      headSrc: $r("app.media.ic_user_lwx"),
+      headSrc: $r("app.media.myPic"),
       msgType: 1,
       self: true,
       msg: "",
@@ -339,7 +339,7 @@ export default struct ChatPage {
     this.chatList.push(voiceChat)
     this.dataList.push({
       name: "刘文熙",
-      headSrc: $r("app.media.ic_user_lwx"),
+      headSrc: $r("app.media.myPic"),
       msgType: 2,
       voicePath: res.recordFilePath,
       self: true,
@@ -522,7 +522,7 @@ export default struct ChatPage {
   private sendTextMsg() {
     this.dataList.push({
       name: "刘文熙",
-      headSrc: $r("app.media.ic_user_lwx"),
+      headSrc: $r("app.media.myPic"),
       msgType: 0,
       self: true,
       msg: this.chatText,

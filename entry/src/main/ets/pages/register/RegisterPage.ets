@@ -21,7 +21,7 @@ export default struct RegisterPage {
       }
       .width('100%')
       .justifyContent(FlexAlign.Start)
-      .margin({ bottom: 20 })
+      .margin({ top: 40 , bottom: 30})
 
       Text('手机号注册')
         .fontSize(25)
@@ -151,7 +151,7 @@ export default struct RegisterPage {
       }
       .width(180)
       .height(50)
-      .margin({ bottom: 10 })
+      .margin({ bottom: 50 })
       .borderRadius(10)
       .enabled(!this.isLoading)
       .backgroundColor('#0cc160')
@@ -208,6 +208,6 @@ export default struct RegisterPage {
     }
     .height('100%')
     .width('100%')
-    .padding(20)
+    .padding(10)
   }
 }

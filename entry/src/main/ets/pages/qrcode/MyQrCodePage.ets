@@ -3,26 +3,25 @@ import Toolbar from '../../component/Toolbar'
 @Entry
 @Component
 struct MyQrCodePage {
-  private value: string = 'https://u.wechat.com/EOBRL2_FCUXDtR8Gr0WsMEw?s=2'
+  private value: string = 'https://u.wechat.com/MH3hfKOWhpm0eoSb1IheAA0'
 
   build() {
-
     Column() {
       Toolbar({ title: "" })
       Row() {
-        Image($r('app.media.ic_user_lwx'))
-          .width(55)
-          .height(55)
+        Image($r('app.media.myPic'))
+          .width(60)
+          .height(60)
           .margin({ right: 10 })
           .borderRadius(6)
 
         Column() {
-          Text("刘文熙")
+          Text("GOODMORNING")
             .fontColor(Color.Black)
-            .fontSize(19)
+            .fontSize(20)
             .fontWeight(500)
 
-          Text("江西 南昌")
+          Text("浙江 嘉兴")
             .fontColor(Color.Grey)
             .fontSize(15)
             .margin({ top: 10 })
@@ -49,22 +48,21 @@ struct MyQrCodePage {
           .borderRadius(6)
       }
 
-
       Text("扫一扫上面的二维码图案，加我为好友")
         .fontColor(Color.Grey)
         .fontSize(15)
         .margin({ top: 20 })
 
-      Blank().layoutWeight(1)
+      Blank().
+      layoutWeight(1)
       Row() {
         Text("扫一扫")
           .fontColor(Color.Grey)
           .fontSize(16)
           .fontWeight(600)
-          .fontColor("#5f6c8a")
+          .fontColor("#5e658a")
           .textAlign(TextAlign.Center)
           .layoutWeight(1)
-
         Divider().vertical(true).color(Color.Grey)
           .height(10)
 
@@ -72,7 +70,7 @@ struct MyQrCodePage {
           .fontColor(Color.Grey)
           .fontSize(16)
           .fontWeight(600)
-          .fontColor("#5f6c8a")
+          .fontColor("#5e658a")
           .textAlign(TextAlign.Center)
           .layoutWeight(1)
 
@@ -83,14 +81,12 @@ struct MyQrCodePage {
           .fontColor(Color.Grey)
           .fontSize(16)
           .fontWeight(600)
-          .fontColor("#5f6c8a")
+          .fontColor("#5e658a")
           .textAlign(TextAlign.Center)
           .layoutWeight(1)
       }
-
       .width(280)
       .margin({ bottom: 80 })
-
     }
     .width('100%')
   }

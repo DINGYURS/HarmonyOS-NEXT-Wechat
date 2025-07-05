@@ -11,33 +11,34 @@ export default struct Mine {
 
   build() {
     Column() {
-
       Row() {
-        Image(this.imgPath ? this.imgPath : $r('app.media.ic_user_lwx'))
-          .width(70)
-          .height(70)
-          .margin({ left: 25, right: 10 })
-          .borderRadius(8)
-          .onClick(() => {
-            PhotoPickerUtils.openGallery(
-              uri => {
-                this.imgPath = uri;
-              }, errMsg => {
-              ToastUtils.show(errMsg)
+        Column() {
+          Image(this.imgPath ? this.imgPath : $r('app.media.myPic'))
+            .width(70)
+            .height(70)
+            .margin({ left: 20 ,right: 10 })
+            .borderRadius(8)
+            .onClick(() => {
+              PhotoPickerUtils.openGallery(
+                uri => {
+                  this.imgPath = uri;
+                }, errMsg => {
+                ToastUtils.show(errMsg)
+              })
             })
-          })
+        }
+        .margin({ top: 40 })
 
         Column() {
-          Text("刘文熙")
+          Text("GOODMORNING")
             .fontColor(Color.Black)
-            .fontSize(26)
+            .fontSize(20)
             .fontWeight(700)
 
-          Text("微信号：wx_023021")
+          Text("微信号：Jiayougaoyi")
             .fontColor(Color.Grey)
-            .fontSize(16)
+            .fontSize(15)
             .margin({ top: 15 })
-
 
         }
         .margin({ top: 40 })
@@ -49,14 +50,13 @@ export default struct Mine {
           .height(16)
           .margin({ top: 38, right: 20 })
 
-
         Image($r("app.media.ic_more"))
           .width(9)
-          .height(16.364)
+          .height(17)
           .margin({ top: 38, right: 15 })
-
-      }.width("100%")
-      .height(203)
+      }
+      .width("100%")
+      .height(180)
       .backgroundColor(Color.White)
       .padding({ top: WindowManager.statusBarHeight })
       .onClick(() => {
