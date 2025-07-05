@@ -1,7 +1,8 @@
 import http from '@ohos.net.http'
 import common from '@ohos.app.ability.common'
 import WechatToolbar1 from '../../component/WechatToolbar1'
-
+import { promptAction } from '@kit.ArkUI'
+import { BusinessError } from '@kit.BasicServicesKit'
 
 
 // ✅ 定义数据接口类型
@@ -277,8 +278,8 @@ struct PerpetualCalendar {
             .padding(12)
             .backgroundColor(Color.White)
             .borderRadius(18)
-            .shadow({ radius: 10}) // 卡片阴影
-            .margin({ top: 10, bottom: 40, left: 12, right: 12 })
+            .shadow({ radius: 10, color: '#999999', offsetX: 0, offsetY: 6 }) // 卡片阴影
+            .margin({ top: 10, bottom: 20, left: 12, right: 12 })
 
 
             // 历史上的今天
@@ -345,17 +346,20 @@ struct PerpetualCalendar {
                     .fontColor('#007AFF')
                     .onClick(() => {
                       try {
-                        let context = getContext(this) as common.UIAbilityContext
-                        context.startAbility({
-                          action: "ohos.want.action.viewData",
-                          entities: ["entity.system.browser"],
-                          uri: this.historyData.url ?? ''
-                        })
+                        const context = getContext(this) as common.UIAbilityContext
+                        context.openLink(this.historyData.url, { appLinkingOnly: false })
+                          .then(() => {
+                            console.info('跳转浏览器成功');
+                          })
+                          .catch((err: BusinessError) => {
+                            promptAction.showToast({ message: `跳转失败: ${err.message}` });
+                            console.error('跳转浏览器失败:', JSON.stringify(err));
+                          });
                       } catch (err) {
-                        console.error('跳转浏览器失败:', JSON.stringify(err))
+                        promptAction.showToast({ message: `异常: ${JSON.stringify(err)}` });
+                        console.error('跳转异常:', JSON.stringify(err));
                       }
                     })
-
                 }
                 .width('100%')
                 .alignItems(VerticalAlign.Center)
@@ -364,7 +368,7 @@ struct PerpetualCalendar {
             .padding(12)
             .backgroundColor(Color.White)
             .borderRadius(18)
-            .shadow({ radius: 10, color: '#99999940', offsetX: 0, offsetY: 6 }) // 卡片阴影
+            .shadow({ radius: 10, color: '#999999', offsetX: 0, offsetY: 6 }) // 卡片阴影
             .margin({ top: 10, bottom: 20, left: 12, right: 12 })
           }
           .width('90%')

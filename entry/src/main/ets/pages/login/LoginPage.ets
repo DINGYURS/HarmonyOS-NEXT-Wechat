@@ -116,7 +116,7 @@ export default struct LoginPage {
 
         setTimeout(() => {
           if (this.telephone === '123456' && this.password === '123456') {
-            router.pushUrl({ url: 'pages/Index' });
+            router.replaceUrl({ url: 'pages/Index' });
           } else {
             AlertDialog.show({
               title: '登录失败',

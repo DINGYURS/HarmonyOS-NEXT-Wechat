@@ -16,7 +16,7 @@ export struct PlusMenu {
               .fontColor('#FEFEFE') // 修改文字颜色为深灰色
               .margin({ left: 16 })
               .onClick(() => {
-                prompt.showToast({ message: "功能尚未开发...", duration: 2000})
+                prompt.showToast({ message: "敬请期待...", duration: 2000})
               })
           }
           .width('100%')
@@ -39,7 +39,7 @@ export struct PlusMenu {
               .fontColor('#FEFEFE') // 修改文字颜色为深灰色
               .margin({ left: 16 })
               .onClick(() => {
-                prompt.showToast({ message: "功能尚未开发...", duration: 2000})
+                prompt.showToast({ message: "敬请期待...", duration: 2000})
               })
           }
           .width('100%')
@@ -62,7 +62,7 @@ export struct PlusMenu {
               .fontColor('#FEFEFE') // 修改文字颜色为深灰色
               .margin({ left: 16 })
               .onClick(() => {
-                prompt.showToast({ message: "功能尚未开发...", duration: 2000})
+                prompt.showToast({ message: "敬请期待...", duration: 2000})
               })
           }
           .width('100%')
@@ -85,7 +85,7 @@ export struct PlusMenu {
               .fontColor('#FEFEFE') // 修改文字颜色为深灰色
               .margin({ left: 16 })
               .onClick(() => {
-                prompt.showToast({ message: "功能尚未开发...", duration: 2000})
+                prompt.showToast({ message: "敬请期待...", duration: 2000})
               })
           }
           .width('100%')

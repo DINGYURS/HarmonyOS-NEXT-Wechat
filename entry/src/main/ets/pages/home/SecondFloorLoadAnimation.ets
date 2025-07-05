@@ -16,7 +16,6 @@
 import window from '@ohos.window';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { SecondFloor } from './SecondFloor';
-import { logger } from '../../utils/Logger';
 import { display } from '@kit.ArkUI';
 
 // 初始化窗口管理model
@@ -59,12 +58,12 @@ export struct SecondFloorLoadAnimationComponent {
       try {
         let promise = windowClass.setWindowLayoutFullScreen(true);
         promise.then(() => {
-          logger.info('Succeeded in setting the window layout to full-screen mode.');
+          console.info('Succeeded in setting the window layout to full-screen mode.');
         }).catch((err: BusinessError) => {
-          logger.error('Failed to set the window layout to full-screen mode. Cause:' + JSON.stringify(err));
+          console.error('Failed to set the window layout to full-screen mode. Cause:' + JSON.stringify(err));
         });
       } catch (exception) {
-        logger.error('Failed to set the window layout to full-screen mode. Cause:' + JSON.stringify(exception));
+        console.error('Failed to set the window layout to full-screen mode. Cause:' + JSON.stringify(exception));
       }
     });
   }

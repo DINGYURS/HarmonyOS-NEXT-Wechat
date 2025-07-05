@@ -54,5 +54,5 @@ export default struct Toolbar {
 }
 
 const unDevTip = () => {
-  ToastUtils.show("功能尚未开发...")
+  ToastUtils.show("敬请期待...")
 }

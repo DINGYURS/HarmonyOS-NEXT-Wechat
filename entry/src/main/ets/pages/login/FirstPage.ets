@@ -20,7 +20,7 @@ export default struct FirstPage {
               .fontSize(18)
           }
           .onClick(() => {
-            router.pushUrl({
+            router.replaceUrl({
               url: 'pages/login/LoginPage'
             })
           })

@@ -29,7 +29,7 @@ export default struct WechatToolbar {
             .margin({ right: 18 })
             .onClick(() => {
               this.isMenuVisible = !this.isMenuVisible  // ✅ 可以直接修改，会影响父组件
-              // prompt.showToast({ message: "功能尚未开发...", duration: 2000 })
+              // prompt.showToast({ message: "敬请期待...", duration: 2000 })
               // router.pushUrl({ url: 'pages/HardwareIndexPage' })
             })
         }

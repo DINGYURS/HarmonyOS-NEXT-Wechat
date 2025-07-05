@@ -1,7 +1,6 @@
 import { display, promptAction, router, Scale } from '@kit.ArkUI';
 import { Animator as animator, AnimatorResult } from '@kit.ArkUI';
 import { AppInfo } from '../../model/AppInfo';
-import { logger } from '../../utils/Logger';
 
 const ICON_NUM_IN_RECENTLY: number = 8; // 示例中最近使用小程序数目
 const ICON_NUM_IN_USEFULNESS: number = 2; // 示例中实用小程序数目
@@ -282,13 +281,13 @@ export struct FloorView {
   }
 
   /**
-   * 听一听下方小程序
+   * 收藏小程序
    */
   @Builder
   usefulnessMiniApps() {
     Column() {
       // 标题
-      Text('听一听')
+      Text('收藏')
         .fontSize(14)
         .textAlign(TextAlign.Start)
         .width('90%')
@@ -297,7 +296,6 @@ export struct FloorView {
 
       // 图标
       Row() {
-        // 性能关注点：本例首次进入页面就需要全部加载且数据不大就不需要使用LazyForeach懒加载。如果是数据过大超过可视区域就需要使用LazyForEach进行数据懒加载，List布局时会根据可视区域按需创建组件，并在组件滑出可视区域外时销毁以降低内存占用。
         ForEach(this.appInfoList, (item: AppInfo) => {
           this.secondFloorComp(item);
         })
@@ -424,7 +422,6 @@ export struct FloorView {
           },
           direction: GridRowDirection.Row
         }) {
-          // 性能关注点：本例首次进入页面就需要全部加载且数据不大就不需要使用LazyForeach懒加载。如果是数据过大超过可视区域就需要使用LazyForEach进行数据懒加载，List布局时会根据可视区域按需创建组件，并在组件滑出可视区域外时销毁以降低内存占用。
           ForEach(this.miniAppInfoList, (item: AppInfo) => {
             GridCol({
               span: {
@@ -461,7 +458,7 @@ export function getScreenHeight(): number {
     let displayClass = display.getDefaultDisplaySync();
     return px2vp(displayClass.height);
   } catch (exception) {
-    logger.error('Failed to obtain the default display object. Code: ' + JSON.stringify(exception));
+    console.error('Failed to obtain the default display object. Code: ' + JSON.stringify(exception));
   }
   return 0;
 }
