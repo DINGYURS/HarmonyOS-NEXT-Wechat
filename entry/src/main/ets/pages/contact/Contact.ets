@@ -5,7 +5,6 @@ import WechatToolbar from '../../component/WechatToolbar'
 import ChatFunctionBar from '../chat/ChatFuntionBar'
 import ChatPage from '../chat/ChatPage1'
 import DataItem, { ContactItem } from './DataItem'
-import { PlusMenu } from '../../component/PlusMenu'
 import WechatToolbar2 from '../../component/WechatToolbar2'
 
 @Preview
@@ -71,9 +70,9 @@ export default struct Contact {
 
       Column() {
         // 标题栏
-        WechatToolbar({ title: "通讯录" , isMenuVisible: this.isMenuVisible})
+        // WechatToolbar({ title: "通讯录" , isMenuVisible: this.isMenuVisible})
 
-        // WechatToolbar2({ title: "通讯录" })
+        WechatToolbar2({ title: "通讯录" })
         // 通讯录列表
         List({ scroller: this.scroller }) {
           // 遍历循环大组标签

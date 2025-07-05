@@ -2,6 +2,7 @@ import router from '@ohos.router'
 import ListChatItem, { ChatItemData } from '../../component/ListChatItem'
 import WechatToolbar from '../../component/WechatToolbar'
 import { PlusMenu } from '../../component/PlusMenu'
+import { SecondFloorLoadAnimationComponent } from './SecondFloorLoadAnimation';
 
 @Preview
 @Component
@@ -43,15 +44,16 @@ export default struct Home {
 
   build() {
     Column() {
-      WechatToolbar({ title: "微信(5)", isMenuVisible: this.isMenuVisible})
+      // WechatToolbar({ title: "微信(5)", isMenuVisible: this.isMenuVisible})
+      SecondFloorLoadAnimationComponent()
 
       // 显示/隐藏 PlusMenu
-      if (this.isMenuVisible) {
-        PlusMenu()
-          .position({ x: '55%', y: 50 }) // 调整位置到右上角
-          .zIndex(999) // 确保菜单在其他内容之上
-      }
-
+      // if (this.isMenuVisible) {
+      //   PlusMenu()
+      //     .position({ x: '55%', y: 50 }) // 调整位置到右上角
+      //     .zIndex(999) // 确保菜单在其他内容之上
+      // }
+/*
       List() {
         ForEach(this.chatList, (item: ChatItemData, index: number) => {
           ListItem() {
@@ -83,7 +85,7 @@ export default struct Home {
       .divider({ strokeWidth: 0.8, color: '#f0f0f0', startMargin: 90, endMargin: 0 }) // 每行之间的分界线
       .backgroundColor(Color.White)
       .width("100%")
-      .height("100%")
+      .height("100%")*/
 
     }
     .width("100%")
